@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # NTG Messaging Module
 ###General Use
 To bring ease to email and messaging service retrieval and implementation, this module can be added to any project with minimal setup. Very basic HTML and CSS structure allows for ease of customizability.  
@@ -115,3 +116,6 @@ The following features are currently being developed:
 
 
 
+=======
+# angular-messages
+>>>>>>> 9b342b54d385f77c856d401e4ec7027ee1c976f9
