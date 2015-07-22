@@ -4,6 +4,7 @@ ntgMessaging.directive('ntgMessageSummary', ['$log', function ($log) {
     return {
         templateUrl: 'directives/ntgmessagesummary.tmpl.html',
         require: '^ntgMessageList',
+        transclude: true,
         scope: {
             messages: '=',
             fromWho: '=',
