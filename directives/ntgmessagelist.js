@@ -16,6 +16,9 @@ ntgMessaging.directive('ntgMessageList', ['$log', 'messagesService', function ($
             markAs: '&',
             checkPriority: '&',
             readMessage: '&'
+        },
+        link: function (scope, element, attrs) {
+            console.log(attrs);
         }
     };
 }]);

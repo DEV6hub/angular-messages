@@ -15,10 +15,6 @@ ntgMessaging.directive('ntgMessageSummary', ['$log', 'messagesService', function
             markAs: '&',
             checkPriority: '&',
             readMessage: '&'
-        },
-        link: function (scope, element, attrs, ctrl, transclude) {
-            scope.messages = messagesService.messagesList;
         }
-
     };
 }]);

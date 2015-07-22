@@ -3,8 +3,9 @@
         <span class=" ntg-message-from">{{ msg.from }} </span>
         <span class="ntg-message-subject"> {{ msg.subject }}</span>
         <span class="ntg-message-date"> {{ msg.date | date: 'dd/mm/yyyy' }}</span>
-        <ng-transclude></ng-transclude>
-
+        <div class="summary-directive">
+            <ng-transclude></ng-transclude>
+        </div>
     </div>
 </div>
 
