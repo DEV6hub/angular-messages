@@ -3,14 +3,6 @@ ntgMessaging.directive('ntgMessageSummary', ['$log', 'messagesService', function
 
     return {
         templateUrl: 'directives/ntgmessagesummary.tmpl.html',
-        transclude: true,
-        link: function (scope, element, attrs, ctrl, transclude) {
-            scope.messages = messagesService.messagesList;
-
-            transclude(scope.$new(), function (clone) {
-                element.append(clone);
-            });
-        },
         scope: {
             messages: '=',
             fromWho: '=',
@@ -23,6 +15,10 @@ ntgMessaging.directive('ntgMessageSummary', ['$log', 'messagesService', function
             markAs: '&',
             checkPriority: '&',
             readMessage: '&'
+        },
+        link: function (scope, element, attrs, ctrl, transclude) {
+            scope.messages = messagesService.messagesList;
         }
+
     };
 }]);
