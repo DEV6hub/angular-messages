@@ -1,10 +1,16 @@
-ntgMessaging.directive('ntgMessageSummary', ['$log', function ($log) {
+ntgMessaging.directive('ntgMessageSummary', ['$log', 'messagesService', function ($log, messagesService) {
     'use strict';
 
     return {
         templateUrl: 'directives/ntgmessagesummary.tmpl.html',
-        require: '^ntgMessageList',
         transclude: true,
+        link: function (scope, element, attrs, ctrl, transclude) {
+            scope.messages = messagesService.messagesList;
+
+            transclude(scope.$new(), function (clone) {
+                element.append(clone);
+            });
+        },
         scope: {
             messages: '=',
             fromWho: '=',
