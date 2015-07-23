@@ -3,18 +3,14 @@ ntgMessaging.directive('ntgMessageSummary', ['$log', 'messagesService', function
 
     return {
         templateUrl: 'directives/ntgmessagesummary.tmpl.html',
+        transclude: true,
         scope: {
             messages: '=',
-            fromWho: '=',
-            subject: '=',
-            date: '=',
-            details: '=',
-            messageStatus: '=',
-            messagePriority: '=',
             archiveMessage: '&',
             markAs: '&',
             checkPriority: '&',
             readMessage: '&'
-        }
+        },
+        link: function (scope, el, attrs, ctrl, transclude) {}
     };
 }]);
