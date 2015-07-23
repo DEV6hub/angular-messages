@@ -1,6 +1,5 @@
 <div class="ntg-messages-summary-container">
     <button ng-click="archiveMessage(msg)" class="ntg-archive-button">Archive</button>
-
     <div class="ntg-message-markas">
         <button ng-click="markAs()" ng-show="!checkPriority()">Mark Urgent</button>
         <button ng-click="markAs()" ng-show="checkPriority()">Mark Not Urgent</button>
@@ -14,24 +13,19 @@
 
     <div ng-switch="messagedetail">
         <div ng-switch-when="from" class="ntg-switch-from">
-            <p>{{ msg.from }}</p>
+            <p>{{ messages.from }}</p>
         </div>
 
         <div ng-switch-when="subject" class="ntg-switch-subject">
-            <p>{{ msg.subject }}</p>
-
+            <p>{{ messages.subject }}</p>
         </div>
 
         <div ng-switch-when="date" class="ntg-switch-date">
-            <p>{{ msg.date | date: 'dd/mm/yyyy' }}</p>
+            <p>{{ messages.date | date: 'dd/mm/yyyy' }}</p>
         </div>
 
-        <!-- Nested message details directive example -->
-        <div ng-switch-when="details" class="ntg-switch-details">
-            <ntg-message-details message-status="messageStatus" from-who="fromWho" subject="subject" date="date" details="details"></ntg-message-details>
-        </div>
-
-        <div ng-switch-when="hide" class="ntg-switch-hide off">
+        <div ng-switch-when="details" class="ntg-switch-subject">
+            <div ng-transclude></div>
         </div>
     </div>
 </div>
