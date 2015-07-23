@@ -14,16 +14,16 @@
 
     <div ng-switch="messagedetail">
         <div ng-switch-when="from" class="ntg-switch-from">
-            <p>{{ messages.from }}</p>
+            <p>{{ msg.from }}</p>
         </div>
 
         <div ng-switch-when="subject" class="ntg-switch-subject">
-            <p>{{ messages.subject }}</p>
+            <p>{{ msg.subject }}</p>
 
         </div>
 
         <div ng-switch-when="date" class="ntg-switch-date">
-            <p>{{ messages.date | date: 'dd/mm/yyyy' }}</p>
+            <p>{{ msg.date | date: 'dd/mm/yyyy' }}</p>
         </div>
 
         <!-- Nested message details directive example -->
