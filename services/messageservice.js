@@ -127,4 +127,4 @@ ntgMessaging.service('messagesService', ['$log', function ($log) {
         if (messageObj.priority === false)
             return false;
     };
-            }]);
+}]);

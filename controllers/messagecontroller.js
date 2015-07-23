@@ -16,14 +16,6 @@ ntgMessaging.controller('messagesController', ['$scope', '$http', '$log', '$time
     mv.archiveMessage = messagesService.archiveMessage;
     mv.checkPriority = messagesService.checkPriority;
     mv.readMessage = messagesService.readMessage;
-    mv.fromWho = messagesService.messagesList.from;
-    mv.subject = messagesService.messagesList.subject;
-    mv.date = messagesService.messagesList.date;
-    mv.details = messagesService.messagesList.body;
-
-
-
-
 
     $http.get('json/messages.json')
         .success(function (responses) {
@@ -51,5 +43,4 @@ ntgMessaging.controller('messagesController', ['$scope', '$http', '$log', '$time
         .error(function (response) {
             $log.error('Unable to get json', response);
         });
-
 }]);
